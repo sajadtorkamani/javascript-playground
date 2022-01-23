@@ -1,0 +1,16 @@
+{
+  "name": "javascript-playground",
+  "version": "1.0.0",
+  "description": "A place to play around with JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format:check": "prettier src/",
+    "format:fix": "prettier --write src/"
+  },
+  "author": "Sajad Torkamani <sajadtorkamani1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
