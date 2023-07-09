@@ -13,7 +13,7 @@ export function stringsConstruction(
         return count
       }
 
-      remainingChars = removeItem(remainingChars, char)
+      remainingChars = withoutItem(remainingChars, char)
       charsUsed += 1
 
       if (charsUsed === stringToForm.length) {
@@ -24,18 +24,17 @@ export function stringsConstruction(
   }
 }
 
-export function removeItem(
-  arrOrString: string | unknown[],
-  itemToExclude: unknown
-) {
-  const arr = Array.isArray(arrOrString) ? arrOrString : arrOrString.split('')
+export function withoutItem<TElement>(
+  arr: TElement[],
+  itemToExclude: TElement
+): TElement[] {
   const index = arr.indexOf(itemToExclude)
 
+  // Item doesn't in exist in array so return original array
   if (index === -1) {
     return arr
   }
 
-  arr.splice(index, 1)
-
-  return arr
+  // Otherwise, return array with item removed
+  return [...arr.slice(0, index), ...arr.slice(index + 1)]
 }
