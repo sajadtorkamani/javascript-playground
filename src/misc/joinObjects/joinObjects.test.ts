@@ -56,20 +56,23 @@ describe('joinObjects', () => {
   test('joins two objects', () => {
     const obj1 = { a: 1 }
     const obj2 = { b: 2 }
-    assert.deepEqual(joinObjects(obj1, obj2), { a: 1, b: 2 })
+    assert.deepEqual<any>(joinObjects(obj1, obj2), { a: 1, b: 2 })
   })
 
   describe('handles duplicate keys', () => {
     test('where the value is a scalar', () => {
       const obj1 = { a: 1, b: 2 }
       const obj2 = { a: 10 }
-      assert.deepEqual(joinObjects(obj1, obj2), { a: 10, b: 2 })
+      assert.deepEqual<any>(joinObjects(obj1, obj2), { a: 10, b: 2 })
     })
 
     test('where the value is an object', () => {
       const obj1 = { a: { foo: 'bar' }, b: 2 }
       const obj2 = { a: { foo: 'baz' } }
-      assert.deepEqual(joinObjects(obj1, obj2), { a: { foo: 'baz' }, b: 2 })
+      assert.deepEqual<any>(joinObjects(obj1, obj2), {
+        a: { foo: 'baz' },
+        b: 2,
+      })
     })
   })
 })
