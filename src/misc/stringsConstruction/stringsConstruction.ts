@@ -2,23 +2,23 @@ export function stringsConstruction(
   stringToForm: string,
   fromString: string
 ): number {
-  let count = 0
+  let numConstructions = 0
   let charsUsed = 0
-  let remainingChars = fromString.split('')
+  let availableChars = fromString.split('')
 
   while (true) {
-    for (let char of stringToForm.split('')) {
-      // We don't have the char
-      if (!remainingChars.includes(char)) {
-        return count
+    for (let charNeeded of stringToForm.split('')) {
+      // We no longer have the character needed
+      if (!availableChars.includes(charNeeded)) {
+        return numConstructions
       }
 
-      remainingChars = withoutItem(remainingChars, char)
+      availableChars = withoutItem(availableChars, charNeeded)
       charsUsed += 1
 
       if (charsUsed === stringToForm.length) {
+        numConstructions += 1
         charsUsed = 0
-        count += 1
       }
     }
   }
