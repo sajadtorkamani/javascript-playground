@@ -1,5 +1,5 @@
-export function removeItem(arr: unknown[], itemToRemove: unknown) {
-  const index = arr.indexOf(itemToRemove)
+export function withoutItem(arr: unknown[], itemToExclude: unknown) {
+  const index = arr.indexOf(itemToExclude)
 
   // Item doesn't in exist in array so return original array
   if (index === -1) {
