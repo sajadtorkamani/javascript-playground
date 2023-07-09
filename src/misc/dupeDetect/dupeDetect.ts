@@ -1,11 +1,10 @@
 export function dupeDetect(solutions: Array<Function>): Array<Array<number>> {
-  const results: { result: number; index: number }[] = []
-  let groupedResults: Record<string, number[]> = {}
+  const EXAMPLE_INPUT = 100
+  const groupedResults: Record<string, number[]> = {}
 
-  // Build an array of results: [{ index: 0, result: 5}, { index: 1, result: 5}]
   solutions.forEach((solution, index) => {
-    const solutionResult = solution(100)
-    results.push({ index, result: solutionResult })
+    const solutionResult = solution(EXAMPLE_INPUT)
+
     if (groupedResults.hasOwnProperty(solutionResult)) {
       groupedResults[solutionResult].push(index)
     } else {
@@ -13,5 +12,7 @@ export function dupeDetect(solutions: Array<Function>): Array<Array<number>> {
     }
   })
 
-  return [[]]
+  return Object.values(groupedResults)
+    .filter((duplicateAnswers) => duplicateAnswers.length > 1)
+    .sort((a, b) => a[0] - b[0])
 }

@@ -24,9 +24,9 @@ describe('dupeDetect', () => {
 
     const exampleTestSet = [
       kataList.slice(0, 9),
-      // kataList.slice(9),
-      // kataList.slice(8, 11),
-      // kataList,
+      kataList.slice(9),
+      kataList.slice(8, 11),
+      kataList,
     ]
 
     const exampleSol = [
@@ -34,17 +34,17 @@ describe('dupeDetect', () => {
         [1, 4, 5],
         [7, 8],
       ],
-      // [
-      //   [0, 2],
-      //   [4, 5],
-      // ],
-      // [],
-      // [
-      //   [1, 4, 5],
-      //   [7, 8],
-      //   [9, 11],
-      //   [13, 14],
-      // ],
+      [
+        [0, 2],
+        [4, 5],
+      ],
+      [],
+      [
+        [1, 4, 5],
+        [7, 8],
+        [9, 11],
+        [13, 14],
+      ],
     ]
 
     exampleTestSet.forEach((example, index) =>
