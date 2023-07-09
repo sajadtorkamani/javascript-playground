@@ -12,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "prettier": "^2.8.1",
+    "typescript": "^5.1.6",
     "vitest": "^0.33.0"
   }
 }
