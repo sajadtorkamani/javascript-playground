@@ -20,6 +20,9 @@ describe('encryptChar', () => {
     [-1, 'a', 'z'],
     [-2, 'a', 'y'],
     [-3, 'a', 'x'],
+    [-4, 'a', 'w'],
+    [-25, 'a', 'b'],
+    [-26, 'a', 'a'],
   ])('encrypts char with negative key', (key, char, encryptedChar) => {
     expect(encryptChar(key, char)).toEqual(encryptedChar)
   })
