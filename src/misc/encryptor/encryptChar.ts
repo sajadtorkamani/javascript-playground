@@ -21,6 +21,7 @@ export function encryptChar(key: number, char: string): string {
   let nextIndex = charIndex + key
 
   if (nextIndex < 0) {
+    nextIndex = nextIndex % 26
     nextIndex = alphabet.length + nextIndex
   }
 
