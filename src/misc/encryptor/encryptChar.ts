@@ -13,6 +13,7 @@ export function encryptChar(key: number, char: string): string {
   }
 
   const isUppercase = char === char.toUpperCase()
+  char = char.toLowerCase()
 
   const alphabet = 'abcdefghijklmnopqrstuvwxyz'
   const charIndex = alphabet.indexOf(char)
