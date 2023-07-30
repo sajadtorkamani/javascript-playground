@@ -1,9 +1,7 @@
 export function encrypt(key: number, str: string): string {
   return str
     .split('')
-    .map((char) => {
-      return encryptChar(key, char)
-    })
+    .map((char) => encryptChar(key, char))
     .join('')
 }
 
@@ -19,11 +17,7 @@ export function encryptChar(key: number, char: string): string {
   const charIndex = alphabet.indexOf(char)
 
   let nextIndex = charIndex + key
-
-  if (nextIndex < 0) {
-    nextIndex = nextIndex % 26
-    nextIndex = alphabet.length + nextIndex
-  }
+  nextIndex = nextIndex >= 0 ? nextIndex : alphabet.length + (nextIndex % 26)
 
   const nextChar = alphabet[nextIndex % 26]
 
