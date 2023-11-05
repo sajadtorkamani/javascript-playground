@@ -12,6 +12,7 @@ function main() {
   mkdir "$kata_dir"
   make_solution_file
   make_test_file
+  open_test_file
 
   echo "Kata directory created at $kata_dir"
 }
@@ -39,6 +40,10 @@ function make_test_file() {
   replaced_file=${file//\$funcName\$/$kata_name}
 
   echo "$replaced_file" >"$test_file"
+}
+
+function open_test_file() {
+  $IDE "$test_file"
 }
 
 main
