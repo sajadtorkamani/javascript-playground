@@ -1,0 +1,8 @@
+import { describe, test, expect } from 'vitest'
+import { $funcName$ } from './$funcName$'
+
+describe('$funcName$', () => {
+  test('returns correct result', () => {
+    expect($funcName$).toBeDefined()
+  })
+})
