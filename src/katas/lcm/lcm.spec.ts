@@ -11,6 +11,6 @@ describe('Basic Tests', () => {
     expect(lcm(3, 5)).toBe(60)
     expect(lcm(10, 20)).toBe(232792560)
     expect(lcm(1, 25)).toBe(26771144400)
-    // expect(lcm(24, 25)).toBe(600)
+    expect(lcm(24, 25)).toBe(600)
   })
 })
