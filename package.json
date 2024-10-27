@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
+    "test:watch": "vitest --watch",
     "format:check": "prettier src/",
     "format:fix": "prettier --write src/"
   },
