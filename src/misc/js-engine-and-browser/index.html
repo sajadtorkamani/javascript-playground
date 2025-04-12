@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript engine and browser</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+
+    <script>
+      console.log('hello')
+
+      const xhr = new XMLHttpRequest()
+      xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1')
+      xhr.onload = () => console.log(xhr.responseText)
+      xhr.send()
+
+      console.log('hello again')
+    </script>
+  </body>
+</html>
